@@ -1,0 +1,69 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Roboto;
+	font-weight: 200;
+}
+.container {
+	position: relative;
+	left: 0vw;
+	font-size: 2vw;
+}
+
+.text {
+	position: relative;
+	width: 80%;
+	left: 10%;
+	display: block;
+	text-decoration-color: black;
+	padding: 1vw 2vw;
+	background: transparent;
+	color: black;
+}
+
+.inputfield {
+	position: relative;
+	font-size: 2vw;
+	width: 52vw;
+	left: 7vw;
+	height: 2vw;
+	display: block;
+	padding: 1vw 2vw;
+	border: none;
+	border: black solid 1px;
+	color: black;
+	border-radius: 0.2vw;
+
+	/* border-bottom-right-radius: 2vw;
+	border-bottom-left-radius: 2vw;
+	border-radius: 0.5vw; */
+}
+
+.inputfield:focus {
+	outline: none;
+}
+
+.progressbar {
+	position: absolute;
+	height: 100vh;
+	transition-duration: 0.8s;
+	left: 0;
+	top: 0;
+	z-index: -1;
+}
+
+.startTime {
+	position: absolute;
+	width: 100%;
+	left: 1.5%;
+	height: 10vw;
+	bottom: -3vw;
+	line-height: 10vw;
+	text-align: center;
+	z-index: 3;
+	color: black;
+}
+
+::placeholder {
+	color: darkgray;
+}

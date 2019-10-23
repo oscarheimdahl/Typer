@@ -1,0 +1,64 @@
+.header {
+	width: 100%;
+	height: 12vh;
+	background-image: linear-gradient(to right, #222, #111);
+	/* background-image: linear-gradient(#4477b2, #fff); */
+	line-height: 10vh;
+	color: white;
+}
+
+.usernameprofile {
+	font-size: 1vw;
+	color: yellow;
+}
+
+.header .logo {
+	width: 10%;
+	height: 12vh;
+	line-height: 12vh;
+	text-align: center;
+	display: inline-block;
+}
+
+.header .logo h2 {
+	margin-left: 2vw;
+	font-family: Quicksand;
+	font-size: calc(12px + 1.5vw);
+}
+
+.header nav {
+	width: 50vw;
+	height: 100%;
+	float: right;
+}
+
+.header nav ul {
+	width: 100%;
+	height: 100%;
+	list-style-type: none;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.header ul li {
+	text-align: center;
+	width: 10vw;
+	height: 12vh;
+	line-height: 12vh;
+	display: inline-block;
+	margin: 0;
+	font-size: calc(12px + 1vw);
+	font-family: Quicksand;
+	border-radius: 10px;
+	transition: background 300ms ease-in-out;
+	transition-duration: 3s;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+.header ul li:hover {
+	text-decoration: underline;
+}

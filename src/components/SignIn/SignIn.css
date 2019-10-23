@@ -1,0 +1,78 @@
+.signinbox {
+	position: relative;
+	width: 300px;
+	height: auto;
+	left: calc(50vw - 150px);
+	top: 10vh;
+	border: solid black 1px;
+	background: white;
+}
+
+.signinbox > h1 {
+	margin-top: 10px;
+	text-align: center;
+	font-family: Quicksand;
+}
+
+.signinbox > .signininfo {
+	position: relative;
+	width: 90%;
+	top: 10%;
+	left: 5%;
+}
+
+.signinbox > .signininfo > .inputContainer {
+	width: 100%;
+	height: 12vh;
+}
+
+.signinbox > .signininfo > .inputContainer > input {
+	position: relative;
+	width: 100%;
+	height: 30px;
+	font-size: 15px;
+	border: solid black 1px;
+}
+
+.signinbox > .signininfo > .inputContainer > label {
+	display: block;
+}
+
+.signinbox > .signininfo > .inputContainer > .errorlabel {
+	color: red;
+	padding: 1vw;
+	font-size: 0.8em;
+	text-align: center;
+}
+
+.signinbox > .signininfo > .errormsg {
+	color: red;
+	text-align: center;
+}
+
+.signinbox > .signininfo > .signinButtonContainer {
+	display: flex;
+	justify-content: space-between;
+	width: 80%;
+	margin: 3vh auto 0 auto;
+	padding-bottom: 10%;
+}
+
+.signinbox > .signininfo > .signinButtonContainer > .button {
+	width: 30%;
+	height: 35px;
+	background: #90ee90;
+	transition-duration: 0.3s;
+	border-radius: 3px;
+	text-align: center;
+	line-height: 35px;
+	text-decoration: none;
+	color: black;
+	font-size: 15px;
+	border: none;
+	cursor: pointer;
+}
+
+.signinbox > .signininfo > .signinButtonContainer > #cancel {
+	background: rgb(225, 85, 98);
+}

@@ -1,0 +1,36 @@
+.admin-navbar {
+	width: 100%;
+	height: 10vh;
+	line-height: 10vh;
+}
+
+.admin-navbar > h1 {
+	display: inline-block;
+	margin-left: 2vw;
+	color: wheat;
+}
+
+.admin-navbar > hr {
+	width: 97%;
+	margin: auto;
+	text-decoration: none;
+	border: 0.2px solid;
+	border-color: rgba(255, 255, 255, 0.4);
+}
+
+.admin-navbar > ul {
+	float: right;
+	height: 100%;
+}
+
+.admin-navbar > ul > a > li {
+	display: inline-block;
+	padding: 0 2vw;
+	margin: 0 1vw;
+	border-radius: 10px;
+	transition: background 250ms ease-in-out;
+}
+
+.admin-navbar > ul > a > li:hover {
+	background: rgba(255, 255, 255, 0.2);
+}
