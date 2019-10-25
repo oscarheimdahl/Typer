@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Progress.css';
 let playerColor = 'red';
+
 export class Progress extends Component {
 	state = {
 		goalPosition: ''
@@ -38,13 +39,12 @@ export class Progress extends Component {
 
 	renderWaitingForOpponents = () => {
 		if (!this.props.startTime) {
-			return <div className="opponentspending">Searching for players</div>;
+			return <div className="opponentspending">Loading game...</div>;
 		}
 	};
 
 	renderOpponentsWPM = () => {
 		if (this.props.opponents) {
-			console.log(this.props.opponents);
 			return this.props.opponents.map(o => {
 				// console.log(o.username);
 				if (o.username !== this.props.username) {

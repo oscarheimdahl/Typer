@@ -26,6 +26,7 @@ class Play extends Component {
 	componentDidMount() {
 		this.joinedGame = false;
 		this.toHome = false;
+		this.playerPositions = [];
 		console.log('play: ' + this.props.username);
 	}
 
@@ -121,18 +122,62 @@ class Play extends Component {
 		let playerMap = doc.data().players;
 		let playersID = Object.keys(playerMap);
 		playersID.forEach(playerID => {
+			let player = playerMap[playerID];
+			player['username'] = playerID;
+			// console.log(playerMap[playerID]);
+			// if (!this.playerPositions.some(p => p.username === playerID))
+			// 	this.playerPositions.push(player);
+			// console.log(this.playerPositions);
+			// this.playerPositions = this.playerPositions.sort((a, b) => {
+			// 	return a.wpm - b.wpm;
+			// });
+			// console.log(this.playerPositions);
+
+			// let positions = this.playerPositions.map(p => {
+			// 	return p.username;
+			// });
+			// console.log(positions);
+
+			// let pos = positions.indexOf(playerID);
+
+			// console.log(pos);
+
 			if (playerID !== this.props.user.uid) {
-				let player = playerMap[playerID];
 				opponents.push({
 					wpm: player.wpm,
 					progress: player.progress,
 					color: player.color,
-					username: playerID,
-					goalPosition: 2
+					username: playerID
+					// goalPosition: pos
 				});
 			}
+			//  else {
+			// 	this.setState({ goalPosition: pos });
+			// }
 		});
+		this.playerPositions = [];
 		return opponents;
+	};
+
+	getGoalPosition = player => {
+		// if (player.progress === 1) {
+		let newPlayer = true;
+		this.playerPositions.forEach(p => {
+			if (p.username === player.username) {
+				newPlayer = false;
+			}
+		});
+		if (newPlayer) this.playerPositions.push(player);
+		this.playerPositions = this.playerPositions.sort((a, b) => {
+			return a.time - b.time;
+		});
+		let pos = 0;
+		for (let i = 0; i < this.playerPositions.length; i++) {
+			console.log(this.playerPositions[i].username);
+			if (this.playerPositions[i].username === player.username) pos = i + 1;
+		}
+		return pos;
+		// }
 	};
 
 	renderInputHandler = () => {

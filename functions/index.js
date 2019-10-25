@@ -6,6 +6,7 @@ const cors = require('cors')({ origin: true });
 admin.initializeApp();
 
 const maxGameSize = 2;
+const waitTime = 10;
 
 exports.getAvailableGame = functions
 	.region('europe-west1')
@@ -91,7 +92,7 @@ async function createNewGame(collection, response, player) {
 					color: player.color
 				}
 			},
-			startTime: Date.now() + 1000 * 20,
+			startTime: Date.now() + 1000 * waitTime,
 			text: text,
 			available: true
 		})

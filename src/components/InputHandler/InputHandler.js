@@ -31,6 +31,7 @@ export class InputHandler extends Component {
 		this.tick();
 		this.resetRemainingTextOverflow();
 		this.mounted = true;
+		this.finalSend = false;
 	}
 
 	resetRemainingTextOverflow = () => {
@@ -63,12 +64,7 @@ export class InputHandler extends Component {
 
 	tick = () => {
 		emitter = setInterval(() => {
-			if (
-				!this.props.complete &&
-				this.state.startTime &&
-				this.state.startTime < Date.now() + 60 * 1000
-			)
-				this.emitProgress();
+			this.emitProgress();
 		}, emitInterval);
 	};
 
@@ -78,7 +74,15 @@ export class InputHandler extends Component {
 			const { progress } = this.state;
 			const { wpm, emit, time } = this.props;
 			let data = { progress: progress, wpm: wpm, time: time };
-			emit(data);
+			if (
+				// !this.finalSend &&
+				this.props.startTime &&
+				this.props.startTime > Date.now() - 90 * 1000 &&
+				this.props.startTime < Date.now() + 90 * 1000
+			) {
+				this.finalSend = this.props.complete;
+				emit(data);
+			}
 		}
 	};
 
